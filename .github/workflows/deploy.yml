@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./RetirementCalculator.Web # 👈 Tells GitHub where your Vite project is
+        working-directory: ./RetirementCalc.Web
 
     steps:
       - name: Checkout
@@ -25,8 +25,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          #cache: 'npm'
-          #cache-dependency-path: './RetirementCalculator.Web/package-lock.json'
+          cache: 'npm'
+          cache-dependency-path: './RetirementCalc.Web/package-lock.json'
 
       - name: Install dependencies
         run: npm install
@@ -40,8 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # 👈 Point this to your Vite build output folder
-          path: './RetirementCalculator.Web/dist'
+          path: './RetirementCalc.Web/dist'
 
   deploy:
     environment:
