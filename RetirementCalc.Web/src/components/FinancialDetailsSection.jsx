@@ -1,6 +1,7 @@
 import { DollarSign } from 'lucide-react';
 import { fmt } from '../lib/formatters';
 import { getSSBenefitMultiplier } from '../lib/withdrawalStrategy';
+import NumberInput from './NumberInput';
 
 const FinancialDetailsSection = ({
   showEdit, setShowEdit,
@@ -36,19 +37,19 @@ const FinancialDetailsSection = ({
                 <div className="space-y-2">
                   <div>
                     <label className="block text-xs font-bold mb-1">Roth IRA</label>
-                    <input type="number" value={p1RothIRA} onChange={(e) => setP1RothIRA(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p1RothIRA} onChange={setP1RothIRA} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">HSA</label>
-                    <input type="number" value={p1HSA} onChange={(e) => setP1HSA(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p1HSA} onChange={setP1HSA} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">401k</label>
-                    <input type="number" value={p1_401k} onChange={(e) => setP1_401k(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p1_401k} onChange={setP1_401k} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">Brokerage</label>
-                    <input type="number" value={p1Brokerage} onChange={(e) => setP1Brokerage(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p1Brokerage} onChange={setP1Brokerage} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                 </div>
                 <div className="mt-2 pt-2 border-t border-blue-200">
@@ -63,19 +64,19 @@ const FinancialDetailsSection = ({
                 <div className="space-y-2">
                   <div>
                     <label className="block text-xs font-bold mb-1">Roth IRA</label>
-                    <input type="number" value={p2RothIRA} onChange={(e) => setP2RothIRA(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p2RothIRA} onChange={setP2RothIRA} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">HSA</label>
-                    <input type="number" value={p2HSA} onChange={(e) => setP2HSA(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p2HSA} onChange={setP2HSA} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">401k</label>
-                    <input type="number" value={p2_401k} onChange={(e) => setP2_401k(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p2_401k} onChange={setP2_401k} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">Brokerage</label>
-                    <input type="number" value={p2Brokerage} onChange={(e) => setP2Brokerage(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p2Brokerage} onChange={setP2Brokerage} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                 </div>
                 <div className="mt-2 pt-2 border-t border-green-200">
@@ -90,7 +91,7 @@ const FinancialDetailsSection = ({
               <h4 className="font-semibold mb-2 text-sm text-purple-700">Joint</h4>
               <div>
                 <label className="block text-xs font-bold mb-1">Cash / Emergency Fund</label>
-                <input type="number" value={jointCash} onChange={(e) => setJointCash(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                <NumberInput value={jointCash} onChange={setJointCash} className="w-full px-2 py-1 border rounded text-sm" />
               </div>
             </div>
 
@@ -108,25 +109,25 @@ const FinancialDetailsSection = ({
                 <div className="space-y-2">
                   <div>
                     <label className="block text-xs font-bold mb-1">Annual Income</label>
-                    <input type="number" value={p1Income} onChange={(e) => setP1Income(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p1Income} onChange={setP1Income} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">401k Contribution %</label>
-                    <input type="number" step="0.5" value={p1_401kContribPct} onChange={(e) => setP1_401kContribPct(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput step="0.5" value={p1_401kContribPct} onChange={setP1_401kContribPct} className="w-full px-2 py-1 border rounded text-sm" />
                     <div className="text-xs text-slate-600 mt-0.5">{fmt(p1_401kEmployee)}/year</div>
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">Employer Match %</label>
-                    <input type="number" step="0.5" value={p1EmployerMatchPct} onChange={(e) => setP1EmployerMatchPct(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput step="0.5" value={p1EmployerMatchPct} onChange={setP1EmployerMatchPct} className="w-full px-2 py-1 border rounded text-sm" />
                     <div className="text-xs text-slate-600 mt-0.5">{fmt(p1_401kEmployer)}/year</div>
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">Annual Roth IRA Contribution</label>
-                    <input type="number" value={p1IRAContrib} onChange={(e) => setP1IRAContrib(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p1IRAContrib} onChange={setP1IRAContrib} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">Annual HSA Contribution</label>
-                    <input type="number" value={p1HSAContrib} onChange={(e) => setP1HSAContrib(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p1HSAContrib} onChange={setP1HSAContrib} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                 </div>
                 <div className="mt-2 pt-2 border-t border-blue-200">
@@ -141,25 +142,25 @@ const FinancialDetailsSection = ({
                 <div className="space-y-2">
                   <div>
                     <label className="block text-xs font-bold mb-1">Annual Income</label>
-                    <input type="number" value={p2Income} onChange={(e) => setP2Income(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p2Income} onChange={setP2Income} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">401k Contribution %</label>
-                    <input type="number" step="0.5" value={p2_401kContribPct} onChange={(e) => setP2_401kContribPct(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput step="0.5" value={p2_401kContribPct} onChange={setP2_401kContribPct} className="w-full px-2 py-1 border rounded text-sm" />
                     <div className="text-xs text-slate-600 mt-0.5">{fmt(p2_401kEmployee)}/year</div>
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">Employer Match %</label>
-                    <input type="number" step="0.5" value={p2EmployerMatchPct} onChange={(e) => setP2EmployerMatchPct(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput step="0.5" value={p2EmployerMatchPct} onChange={setP2EmployerMatchPct} className="w-full px-2 py-1 border rounded text-sm" />
                     <div className="text-xs text-slate-600 mt-0.5">{fmt(p2_401kEmployer)}/year</div>
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">Annual Roth IRA Contribution</label>
-                    <input type="number" value={p2IRAContrib} onChange={(e) => setP2IRAContrib(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p2IRAContrib} onChange={setP2IRAContrib} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">Annual HSA Contribution</label>
-                    <input type="number" value={p2HSAContrib} onChange={(e) => setP2HSAContrib(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p2HSAContrib} onChange={setP2HSAContrib} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                 </div>
                 <div className="mt-2 pt-2 border-t border-green-200">
@@ -185,12 +186,12 @@ const FinancialDetailsSection = ({
                 <div className="space-y-2">
                   <div>
                     <label className="block text-xs font-bold mb-1">Social Security (at 67)</label>
-                    <input type="number" value={p1SSMonth} onChange={(e) => setP1SSMonth(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p1SSMonth} onChange={setP1SSMonth} className="w-full px-2 py-1 border rounded text-sm" />
                     <div className="text-xs text-slate-500 mt-0.5">{fmt(p1SSMonth * 12)}/year</div>
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">Pension (starts age 65)</label>
-                    <input type="number" value={p1PensionMonth} onChange={(e) => setP1PensionMonth(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p1PensionMonth} onChange={setP1PensionMonth} className="w-full px-2 py-1 border rounded text-sm" />
                     <div className="text-xs text-slate-500 mt-0.5">{fmt(p1PensionMonth * 12)}/year</div>
                   </div>
                 </div>
@@ -201,12 +202,12 @@ const FinancialDetailsSection = ({
                 <div className="space-y-2">
                   <div>
                     <label className="block text-xs font-bold mb-1">Social Security (at 67)</label>
-                    <input type="number" value={p2SSMonth} onChange={(e) => setP2SSMonth(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p2SSMonth} onChange={setP2SSMonth} className="w-full px-2 py-1 border rounded text-sm" />
                     <div className="text-xs text-slate-500 mt-0.5">{fmt(p2SSMonth * 12)}/year</div>
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">Pension (starts age 65)</label>
-                    <input type="number" value={p2PensionMonth} onChange={(e) => setP2PensionMonth(+e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                    <NumberInput value={p2PensionMonth} onChange={setP2PensionMonth} className="w-full px-2 py-1 border rounded text-sm" />
                     <div className="text-xs text-slate-500 mt-0.5">{fmt(p2PensionMonth * 12)}/year</div>
                   </div>
                 </div>

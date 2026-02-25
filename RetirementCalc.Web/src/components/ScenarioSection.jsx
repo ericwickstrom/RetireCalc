@@ -1,4 +1,5 @@
 import { fmt } from '../lib/formatters';
+import NumberInput from './NumberInput';
 
 const ScenarioSection = ({
   annualExpenses, setAnnualExpenses, healthcareCost, setHealthcareCost,
@@ -19,11 +20,11 @@ const ScenarioSection = ({
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label className="block text-xs font-bold mb-1">Base Annual</label>
-            <input type="number" value={annualExpenses} onChange={(e) => setAnnualExpenses(+e.target.value)} className="w-full px-2 py-1.5 border rounded text-base font-semibold" />
+            <NumberInput value={annualExpenses} onChange={setAnnualExpenses} className="w-full px-2 py-1.5 border rounded text-base font-semibold" />
           </div>
           <div>
             <label className="block text-xs font-bold mb-1">Healthcare (ages {retirementAge}-64){retirementAge >= 65 ? ' - N/A' : ''}</label>
-            <input type="number" value={healthcareCost} onChange={(e) => setHealthcareCost(+e.target.value)} className="w-full px-2 py-1.5 border rounded text-base font-semibold" disabled={retirementAge >= 65} />
+            <NumberInput value={healthcareCost} onChange={setHealthcareCost} className="w-full px-2 py-1.5 border rounded text-base font-semibold" disabled={retirementAge >= 65} />
             <div className="text-xs text-slate-500 mt-0.5">Total: {fmt(annualExpenses + (retirementAge >= 65 ? 0 : healthcareCost))}/yr</div>
           </div>
         </div>
@@ -35,7 +36,7 @@ const ScenarioSection = ({
         <div className="grid grid-cols-5 gap-2">
           <div>
             <label className="block text-xs font-bold mb-1">Current Age</label>
-            <input type="number" value={currentAge} onChange={(e) => setCurrentAge(+e.target.value)} className="w-full px-2 py-1 border rounded text-base font-bold" />
+            <NumberInput value={currentAge} onChange={setCurrentAge} className="w-full px-2 py-1 border rounded text-base font-bold" />
           </div>
           <div>
             <label className="block text-xs font-bold mb-1">Retire Age</label>

@@ -1,4 +1,5 @@
 import { fmt } from '../lib/formatters';
+import NumberInput from './NumberInput';
 
 const SemiRetirementSection = ({
   semiRetireAge, setSemiRetireAge, semiRetireIncome, setSemiRetireIncome,
@@ -28,7 +29,7 @@ const SemiRetirementSection = ({
             </div>
             <div>
               <label className="block text-xs font-bold mb-1">Income</label>
-              <input type="number" value={semiRetireIncome} onChange={(e) => setSemiRetireIncome(+e.target.value)} disabled={semiRetireAge === 0} className="w-full px-2 py-1.5 border rounded" />
+              <NumberInput value={semiRetireIncome} onChange={setSemiRetireIncome} disabled={semiRetireAge === 0} className="w-full px-2 py-1.5 border rounded" />
             </div>
             <div>
               <label className="block text-xs font-bold mb-1">Savings %</label>
