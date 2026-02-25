@@ -508,4 +508,5 @@ dist-ssr
 *.sln
 *.sw?
 
-*.md
+CLAUDE.md
+PROJECT.md
