@@ -5,8 +5,8 @@ import NumberInput from './NumberInput';
 
 const FinancialDetailsSection = ({
   showEdit, setShowEdit,
-  p1RothIRA, setP1RothIRA, p1HSA, setP1HSA, p1_401k, setP1_401k, p1Brokerage, setP1Brokerage,
-  p2RothIRA, setP2RothIRA, p2HSA, setP2HSA, p2_401k, setP2_401k, p2Brokerage, setP2Brokerage,
+  p1RothIRA, setP1RothIRA, p1TraditionalIRA, setP1TraditionalIRA, p1HSA, setP1HSA, p1_401k, setP1_401k, p1Brokerage, setP1Brokerage,
+  p2RothIRA, setP2RothIRA, p2TraditionalIRA, setP2TraditionalIRA, p2HSA, setP2HSA, p2_401k, setP2_401k, p2Brokerage, setP2Brokerage,
   jointCash, setJointCash, totalAssets,
   p1Income, setP1Income, p2Income, setP2Income,
   p1_401kContribPct, setP1_401kContribPct, p1EmployerMatchPct, setP1EmployerMatchPct,
@@ -40,6 +40,10 @@ const FinancialDetailsSection = ({
                     <NumberInput value={p1RothIRA} onChange={setP1RothIRA} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                   <div>
+                    <label className="block text-xs font-bold mb-1">Traditional IRA</label>
+                    <NumberInput value={p1TraditionalIRA} onChange={setP1TraditionalIRA} className="w-full px-2 py-1 border rounded text-sm" />
+                  </div>
+                  <div>
                     <label className="block text-xs font-bold mb-1">HSA</label>
                     <NumberInput value={p1HSA} onChange={setP1HSA} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
@@ -54,7 +58,7 @@ const FinancialDetailsSection = ({
                 </div>
                 <div className="mt-2 pt-2 border-t border-blue-200">
                   <div className="text-xs font-bold text-blue-700">
-                    P1 Total: {fmt(p1RothIRA + p1HSA + p1_401k + p1Brokerage)}
+                    P1 Total: {fmt(p1RothIRA + p1TraditionalIRA + p1HSA + p1_401k + p1Brokerage)}
                   </div>
                 </div>
               </div>
@@ -65,6 +69,10 @@ const FinancialDetailsSection = ({
                   <div>
                     <label className="block text-xs font-bold mb-1">Roth IRA</label>
                     <NumberInput value={p2RothIRA} onChange={setP2RothIRA} className="w-full px-2 py-1 border rounded text-sm" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold mb-1">Traditional IRA</label>
+                    <NumberInput value={p2TraditionalIRA} onChange={setP2TraditionalIRA} className="w-full px-2 py-1 border rounded text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-bold mb-1">HSA</label>
@@ -81,7 +89,7 @@ const FinancialDetailsSection = ({
                 </div>
                 <div className="mt-2 pt-2 border-t border-green-200">
                   <div className="text-xs font-bold text-green-700">
-                    P2 Total: {fmt(p2RothIRA + p2HSA + p2_401k + p2Brokerage)}
+                    P2 Total: {fmt(p2RothIRA + p2TraditionalIRA + p2HSA + p2_401k + p2Brokerage)}
                   </div>
                 </div>
               </div>

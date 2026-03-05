@@ -39,7 +39,7 @@ const RetirementCalculator = () => {
         accounts: {
           roth: inputs.p1RothIRA + inputs.p2RothIRA,
           hsa: inputs.p1HSA + inputs.p2HSA,
-          traditional: inputs.p1_401k + inputs.p2_401k,
+          traditional: inputs.p1_401k + inputs.p1TraditionalIRA + inputs.p2_401k + inputs.p2TraditionalIRA,
           brokerage: inputs.p1Brokerage + inputs.p2Brokerage,
           cash: inputs.jointCash,
         },

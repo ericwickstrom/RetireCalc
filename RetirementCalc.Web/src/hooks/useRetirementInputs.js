@@ -24,12 +24,14 @@ export const useRetirementInputs = () => {
 
   // Person 1 Assets
   const [p1RothIRA, setP1RothIRA] = useState(50000);
+  const [p1TraditionalIRA, setP1TraditionalIRA] = useState(0);
   const [p1HSA, setP1HSA] = useState(10000);
   const [p1_401k, setP1_401k] = useState(75000);
   const [p1Brokerage, setP1Brokerage] = useState(0);
 
   // Person 2 Assets
   const [p2RothIRA, setP2RothIRA] = useState(0);
+  const [p2TraditionalIRA, setP2TraditionalIRA] = useState(0);
   const [p2HSA, setP2HSA] = useState(0);
   const [p2_401k, setP2_401k] = useState(50000);
   const [p2Brokerage, setP2Brokerage] = useState(0);
@@ -62,7 +64,7 @@ export const useRetirementInputs = () => {
   const [p2PensionMonth, setP2PensionMonth] = useState(0);
 
   // Derived Values
-  const totalAssets = p1RothIRA + p1HSA + p1_401k + p1Brokerage + p2RothIRA + p2HSA + p2_401k + p2Brokerage + jointCash;
+  const totalAssets = p1RothIRA + p1TraditionalIRA + p1HSA + p1_401k + p1Brokerage + p2RothIRA + p2TraditionalIRA + p2HSA + p2_401k + p2Brokerage + jointCash;
   const income = p1Income + p2Income;
 
   const p1_401kEmployee = Math.min(p1Income * (p1_401kContribPct / 100), 23000);
@@ -87,8 +89,8 @@ export const useRetirementInputs = () => {
 
     showEdit, setShowEdit, showSemiRetire, setShowSemiRetire,
 
-    p1RothIRA, setP1RothIRA, p1HSA, setP1HSA, p1_401k, setP1_401k, p1Brokerage, setP1Brokerage,
-    p2RothIRA, setP2RothIRA, p2HSA, setP2HSA, p2_401k, setP2_401k, p2Brokerage, setP2Brokerage,
+    p1RothIRA, setP1RothIRA, p1TraditionalIRA, setP1TraditionalIRA, p1HSA, setP1HSA, p1_401k, setP1_401k, p1Brokerage, setP1Brokerage,
+    p2RothIRA, setP2RothIRA, p2TraditionalIRA, setP2TraditionalIRA, p2HSA, setP2HSA, p2_401k, setP2_401k, p2Brokerage, setP2Brokerage,
     jointCash, setJointCash,
 
     p1Income, setP1Income, p2Income, setP2Income,
