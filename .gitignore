@@ -510,3 +510,6 @@ dist-ssr
 
 CLAUDE.md
 PROJECT.md
+
+settings.local.json
+.claude/
